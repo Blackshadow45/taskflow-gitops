@@ -25,8 +25,8 @@ spec:
       terminationGracePeriodSeconds: 30
       containers:
       - name: notification-service
-        image: notification-service:latest
-        imagePullPolicy: Never
+        image: ghcr.io/blackshadow45/taskflow-platform/notification-service:aa6aec825dd037b6c1653cca85e8f295f2117532
+        imagePullPolicy: IfNotPresent
         ports:
         - name: http
           containerPort: 5003

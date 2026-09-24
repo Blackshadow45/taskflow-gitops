@@ -25,8 +25,8 @@ spec:
       terminationGracePeriodSeconds: 30
       containers:
       - name: task-service
-        image: task-service:latest
-        imagePullPolicy: Never
+        image: ghcr.io/blackshadow45/taskflow-platform/task-service:aa6aec825dd037b6c1653cca85e8f295f2117532
+        imagePullPolicy: IfNotPresent
         ports:
         - name: http
           containerPort: 5001
