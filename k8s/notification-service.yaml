@@ -23,8 +23,9 @@ spec:
         tier: backend
     spec:
       terminationGracePeriodSeconds: 30
-            imagePullSecrets:
-      - name: ghcr-creds
+        imagePullSecrets:
+        - name: ghcr-creds
+          - name: ghcr-creds
       containers:
       - name: notification-service
         image: ghcr.io/blackshadow45/taskflow-platform/notification-service:1b01dc5be0aa4ad6fdb4aa5e4d721622b40e4d92
