@@ -23,6 +23,8 @@ spec:
         tier: backend
     spec:
       terminationGracePeriodSeconds: 30
+            imagePullSecrets:
+      - name: ghcr-creds
       containers:
       - name: user-service
         image: ghcr.io/blackshadow45/taskflow-platform/user-service:aa6aec825dd037b6c1653cca85e8f295f2117532

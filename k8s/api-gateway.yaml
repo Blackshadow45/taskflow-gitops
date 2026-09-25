@@ -27,6 +27,8 @@ spec:
         prometheus.io/path: "/metrics"
     spec:
       terminationGracePeriodSeconds: 30
+      imagePullSecrets:
+      - name: ghcr-creds
       containers:
       - name: api-gateway
         image: ghcr.io/blackshadow45/taskflow-platform/api-gateway:aa6aec825dd037b6c1653cca85e8f295f2117532
