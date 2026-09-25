@@ -23,7 +23,7 @@ spec:
         tier: backend
     spec:
       terminationGracePeriodSeconds: 30
-            imagePullSecrets:
+      imagePullSecrets:
       - name: ghcr-creds
       containers:
       - name: user-service

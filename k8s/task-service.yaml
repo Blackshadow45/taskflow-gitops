@@ -23,47 +23,47 @@ spec:
         tier: backend
     spec:
       terminationGracePeriodSeconds: 30
-            imagePullSecrets:
-      - name: ghcr-creds
+      imagePullSecrets:
+        - name: ghcr-creds
       containers:
-      - name: task-service
-        image: ghcr.io/blackshadow45/taskflow-platform/task-service:1b01dc5be0aa4ad6fdb4aa5e4d721622b40e4d92
-        imagePullPolicy: IfNotPresent
-        ports:
-        - name: http
-          containerPort: 5001
-          protocol: TCP
-        resources:
-          requests:
-            cpu: 100m
-            memory: 96Mi
-          limits:
-            cpu: 400m
-            memory: 192Mi
-        startupProbe:
-          httpGet:
-            path: /health
-            port: 5001
-          periodSeconds: 3
-          failureThreshold: 20
-        livenessProbe:
-          httpGet:
-            path: /health
-            port: 5001
-          periodSeconds: 10
-          failureThreshold: 3
-        readinessProbe:
-          httpGet:
-            path: /health
-            port: 5001
-          periodSeconds: 5
-          failureThreshold: 2
-        securityContext:
-          allowPrivilegeEscalation: false
-          runAsNonRoot: true
-          capabilities:
-            drop:
-            - ALL
+        - name: task-service
+          image: ghcr.io/blackshadow45/taskflow-platform/task-service:1b01dc5be0aa4ad6fdb4aa5e4d721622b40e4d92
+          imagePullPolicy: IfNotPresent
+          ports:
+            - name: http
+              containerPort: 5001
+              protocol: TCP
+          resources:
+            requests:
+              cpu: 100m
+              memory: 96Mi
+            limits:
+              cpu: 400m
+              memory: 192Mi
+          startupProbe:
+            httpGet:
+              path: /health
+              port: 5001
+            periodSeconds: 3
+            failureThreshold: 20
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 5001
+            periodSeconds: 10
+            failureThreshold: 3
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 5001
+            periodSeconds: 5
+            failureThreshold: 2
+          securityContext:
+            allowPrivilegeEscalation: false
+            runAsNonRoot: true
+            capabilities:
+              drop:
+                - ALL
 ---
 apiVersion: v1
 kind: Service
@@ -75,6 +75,6 @@ spec:
   selector:
     app: task-service
   ports:
-  - name: http
-    port: 5001
-    targetPort: 5001
+    - name: http
+      port: 5001
+      targetPort: 5001
