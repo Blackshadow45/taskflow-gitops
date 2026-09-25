@@ -31,7 +31,7 @@ spec:
       - name: ghcr-creds
       containers:
       - name: api-gateway
-        image: ghcr.io/blackshadow45/taskflow-platform/api-gateway:aa6aec825dd037b6c1653cca85e8f295f2117532
+        image: ghcr.io/blackshadow45/taskflow-platform/api-gateway:1b01dc5be0aa4ad6fdb4aa5e4d721622b40e4d92
         imagePullPolicy: IfNotPresent
         ports:
         - name: http

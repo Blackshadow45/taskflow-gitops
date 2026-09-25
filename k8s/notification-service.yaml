@@ -27,7 +27,7 @@ spec:
       - name: ghcr-creds
       containers:
       - name: notification-service
-        image: ghcr.io/blackshadow45/taskflow-platform/notification-service:aa6aec825dd037b6c1653cca85e8f295f2117532
+        image: ghcr.io/blackshadow45/taskflow-platform/notification-service:1b01dc5be0aa4ad6fdb4aa5e4d721622b40e4d92
         imagePullPolicy: IfNotPresent
         ports:
         - name: http
